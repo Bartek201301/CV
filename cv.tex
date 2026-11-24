@@ -1,0 +1,67 @@
+% CV w LaTeX-u -- Bartosz Swiridow
+% Szkielet wygenerowany z pomocą Claude (Anthropic) na podstawie podanych przeze mnie danych.
+% Kompilacja: pdflatex cv.tex
+
+\documentclass[11pt,a4paper]{article}
+
+% --- Preambuła: pakiety ---
+\usepackage[T1]{fontenc}          % poprawne polskie znaki w PDF-ie
+\usepackage[utf8]{inputenc}       % plik źródłowy zapisany w UTF-8
+\usepackage[polish]{babel}        % polskie dzielenie wyrazów i nazwy
+\usepackage{lmodern}              % ładna, skalowalna czcionka
+\usepackage[margin=2cm]{geometry} % marginesy 2 cm ze wszystkich stron
+\usepackage[hidelinks]{hyperref}  % klikalne linki (bez ramek wokół nich)
+
+\pagestyle{empty}                 % brak numeru strony na dole
+\setlength{\parindent}{0pt}       % bez wcięcia na początku akapitu
+
+% --- Własne polecenia ---
+% \sekcja{Nazwa}: pogrubiony nagłówek z poziomą linią pod spodem.
+\newcommand{\sekcja}[1]{%
+  \vspace{10pt}%
+  {\large\bfseries #1}\par
+  \vspace{2pt}\hrule\vspace{6pt}%
+}
+
+% \wpis{Co}{Kiedy}{Opis}: nazwa po lewej, data dosunięta do prawej (\hfill),
+% pod spodem opis kursywą. Pusty trzeci argument {} = brak opisu.
+\newcommand{\wpis}[3]{%
+  \textbf{#1} \hfill #2\par
+  \if\relax\detokenize{#3}\relax\else{\itshape #3}\par\fi
+  \vspace{4pt}%
+}
+
+\begin{document}
+
+% --- Nagłówek z danymi kontaktowymi ---
+\begin{center}
+  {\Huge\bfseries Bartosz Swiridow}\\[6pt]
+  Wrocław \quad$\cdot$\quad
+  \href{mailto:bartekswiridow@gmail.com}{bartekswiridow@gmail.com} \quad$\cdot$\quad
+  \href{https://github.com/Bartek201301}{github.com/Bartek201301}
+\end{center}
+
+\sekcja{Wykształcenie}
+\wpis{Uniwersytet Wrocławski -- Informatyka, studia inżynierskie}{od 2026}
+     {Wydział Matematyki i Informatyki, I semestr}
+
+\sekcja{Osiągnięcia}
+\wpis{Brązowy Wilk -- Olimpiada Zwolnionych z Teorii}{}{}
+\wpis{III miejsce -- Ogólnopolski Konkurs Startupowy Econverse}{}{}
+\wpis{Udział -- Microsoft Imagine Cup}{}{}
+
+\sekcja{Hackathony}
+\wpis{HackYeah}{2026}{}
+\wpis{NASA Space Apps Challenge}{2026}{}
+\wpis{HackNation}{2026}{}
+
+\sekcja{Umiejętności}
+\begin{tabular}{@{}ll}
+  \textbf{Programowanie:} & Python, C++ \\
+  \textbf{Języki obce:}   & angielski (B2)
+\end{tabular}
+
+\sekcja{Zainteresowania}
+Tworzenie aplikacji mobilnych -- dwie aplikacje stworzone, jeszcze nieopublikowane.
+
+\end{document}
